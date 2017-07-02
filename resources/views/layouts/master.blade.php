@@ -14,7 +14,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/hrm.css') }}">
     </head>
     <body>
-        <div class="container">
+        <div class="container is-fluid">
           @include('layouts.header')
           @yield('content')
         </div>

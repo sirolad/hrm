@@ -11,4 +11,10 @@
 |
 */
 
-Route::get('/', 'PagesController@index');
+Route::get('/', 'PagesController@index')->name('home');
+
+/**
+ * Routes for Authentication
+ */
+Route::get('/login', 'PagesController@login')->name('login.view');
+Route::post('/login', 'Auth\LoginController@login')->name('login');

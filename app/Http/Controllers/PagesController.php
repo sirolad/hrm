@@ -10,4 +10,9 @@ class PagesController extends Controller
     {
         return view('pages.index');
     }
+
+    public function login()
+    {
+        return view('pages.login');
+    }
 }

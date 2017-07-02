@@ -4,7 +4,7 @@
     <nav class="nav">
       <div class="container">
         <div class="nav-left">
-          <a class="nav-item">
+          <a class="nav-item" href="{{ route('home') }}">
             <!-- <img src="images/bulma-type-white.png" alt="Logo"> -->
             <b>SiroladHRM</b>
           </a>
@@ -16,21 +16,21 @@
       </label>
       <input type="checkbox" id="menu-toggle" class="is-hidden"/>
         <div class="nav-right nav-menu">
-          <a class="nav-item is-active">
+          <!-- <a class="nav-item is-active">
             Home
           </a>
           <a class="nav-item">
             Examples
-          </a>
-          <a class="nav-item">
-            Documentation
-          </a>
+          </a> -->
+          <!-- <a class="nav-item">
+            Login
+          </a> -->
           <span class="nav-item">
-            <a class="button is-info is-inverted">
+            <a class="button is-info is-inverted" href="{{ route('login.view') }}">
               <span class="icon">
-                <i class="fa fa-github"></i>
+                <i class="fa fa-sign-in" aria-hidden="true"></i>
               </span>
-              <span>Download</span>
+              <span>Login</span>
             </a>
           </span>
         </div>
