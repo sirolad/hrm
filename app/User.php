@@ -44,4 +44,28 @@ class User extends Authenticatable
      * @var array
      */
     protected $dates = ['deleted_at'];
+
+    /**
+     * @return bool
+     */
+    public function isAdmin()
+    {
+        return $this->attributes['role'] == Role::ADMIN;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isEmployee()
+    {
+        return $this->attributes['role'] == Role::EMPLOYEE;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isManager()
+    {
+        return $this->attributes['role'] == Role::MANAGER;
+    }
 }

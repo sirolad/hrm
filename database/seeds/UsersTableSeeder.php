@@ -17,7 +17,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'admin@hrm.com',
             'password' => Hash::make('admin'),
             'surname' => 'User',
-            'birthDate' => date('Y, m, d'),
+            'birthDate' => date('Y-m-d'),
         ]);
     }
 }

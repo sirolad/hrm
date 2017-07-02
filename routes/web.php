@@ -18,3 +18,10 @@ Route::get('/', 'PagesController@index')->name('home');
  */
 Route::get('/login', 'PagesController@login')->name('login.view');
 Route::post('/login', 'Auth\LoginController@login')->name('login');
+Route::get('/dashboard', 'UsersController@index')->name('users.dashboard');
+Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
+
+/**
+ * Admin routes
+ */
+Route::get('/admin/dashboard', 'AdminController@index')->name('admin.dashboard');

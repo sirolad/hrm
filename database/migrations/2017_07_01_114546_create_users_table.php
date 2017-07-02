@@ -29,7 +29,7 @@ class CreateUsersTable extends Migration
             $table->enum('maritalStatus', ['married', 'single', 'divorced', 'widowed'])->nullable();
             $table->integer('role')->unsigned()->nullable();
             $table->date('hireDate')->nullable();
-            $table->bigInteger('phone')->unique()->index();
+            $table->bigInteger('phone')->unique()->index()->nullable();
             $table->string('country')->nullable();
             $table->rememberToken();
             $table->timestamps();

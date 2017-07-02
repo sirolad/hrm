@@ -39,13 +39,37 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
+    /**
+     * Login Authenticated Users
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function login(Request $request)
     {
         $email = $request->input('email');
         $password = $request->input('password');
 
         if (Auth::attempt(['email' => $email, 'password' => $password])) {
-            return redirect()->intended('dashboard');
+            if (Auth::user()->isAdmin()) {
+                return redirect()->intended('admin/dashboard');
+            }
+
+            if (Auth::user()->isEmployee()) {
+                return redirect()->intended('dashboard');
+            }
+        }
+    }
+
+    /**
+     * Logout Authenticated Users
+     */
+    public function logout()
+    {
+        if(Auth::check()) {
+            Auth::logout();
+
+            return redirect('/');
         }
     }
 }
